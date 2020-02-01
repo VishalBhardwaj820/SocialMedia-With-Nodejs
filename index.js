@@ -6,6 +6,9 @@ const mongoose=require('./config/mongoose');
 const user=require('./models/user');
 
 
+// THIS IS PASSPORT
+
+
 
 app.set('view engine','ejs');
 app.set('views','views');

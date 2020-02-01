@@ -16,5 +16,4 @@ const schema=new mongoose.Schema({
     }
 },{timestamps:true});
 const gitsocial=mongoose.model('gitsocial',schema);
-// THIS iS PASPORT FILE
 module.exports=gitsocial;
