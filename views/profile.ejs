@@ -4,3 +4,21 @@
     <textarea name="content" id="" cols="30" rows="3"></textarea>
     <input type="submit" name="" value="POST" id="">
 </form>
+
+
+<div>
+    <% if(locals.user){%>
+
+        <% for(post of posts ) {%>
+            
+            <li>
+                <p>
+                    <%=post.content%> <br>
+                    <%=post.user.name%> <br>
+                </p>
+            </li>
+
+        <%}%>
+
+    <%}%>
+</div>

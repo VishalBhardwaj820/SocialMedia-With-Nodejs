@@ -1,4 +1,5 @@
 const social=require('../models/user');
+const post=require('../models/post');
 
 module.exports.signin=function(req,res){
     if(req.isAuthenticated())
@@ -19,7 +20,10 @@ module.exports.signup=function(req,res){
 }
 
 module.exports.profile=function(req,res){
-    return res.render('profile');
+
+    post.find({}).populate('user').exec(function(err,posts){
+        return res.render('profile',{posts:posts});
+    });
 }
 
 module.exports.create=function(req,res)
