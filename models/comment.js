@@ -5,17 +5,15 @@ const schema=new mongoose.Schema({
         type:String,
         required:true
     },
-
+    post:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Post'
+    },
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'gitsocial'
-    },
-    comments:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Comment'
-    }]
+    }
 },{timestamps:true});
 
-const post=mongoose.model('Post',schema);
-
-module.exports=post;
+const db=mongoose.model('Comment',schema);
+module.exports=db;
