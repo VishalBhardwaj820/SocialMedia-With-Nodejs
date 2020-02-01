@@ -14,8 +14,7 @@ const schema=new mongoose.Schema({
         type:String,
         required:true
     }
-},{timestamps:true});djfjsdjfdsjfgsgfjsgdsjf djfusdu
-
+},{timestamps:false});
 const gitsocial=mongoose.model('gitsocial',schema);
 
 module.exports=gitsocial;
