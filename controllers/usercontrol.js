@@ -21,7 +21,15 @@ module.exports.signup=function(req,res){
 
 module.exports.profile=function(req,res){
 
-    post.find({}).populate('user').exec(function(err,posts){
+    post.find({})
+    .populate('user')
+    .populate({
+        path:'comments',
+        populate:{
+            path:'user'
+        }
+    })
+    .exec(function(err,posts){
         return res.render('profile',{posts:posts});
     });
 }
