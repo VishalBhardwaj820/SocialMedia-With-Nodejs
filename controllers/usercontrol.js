@@ -1,10 +1,20 @@
 const social=require('../models/user');
 
 module.exports.signin=function(req,res){
+    if(req.isAuthenticated())
+    {
+    return res.render('profile');
+
+    }
     return res.render('signin');
 }
 
 module.exports.signup=function(req,res){
+    if(req.isAuthenticated())
+    {
+    return res.render('profile');
+
+    }
     return res.render('signup');
 }
 
@@ -47,5 +57,11 @@ module.exports.create=function(req,res)
 
 module.exports.createsession=function(req,res)
 {
-    return res.render('profile');
+    return res.redirect('/');
+}
+
+module.exports.signout=function(req,res)
+{
+    req.logout();
+    return res.redirect('/');
 }
